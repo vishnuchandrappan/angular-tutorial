@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -24,6 +24,12 @@ export class RecipeListComponent implements OnInit {
       'https://www.inspiredtaste.net/wp-content/uploads/2018/12/Sauteed-Zucchini-Recipe-1-1200.jpg'
     ),
   ];
+
+  @Output() Hell = new EventEmitter() as any;
+
+  onHell() {
+    this.Hell.emit();
+  }
 
   constructor() {}
 

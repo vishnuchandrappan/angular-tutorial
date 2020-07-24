@@ -1,10 +1,20 @@
 <app-header></app-header>
 <div class="container mt-4">
-  <div class="row">
-    <div class="col-12">
+  <div class="row justify-content-center">
+    <div class="col-4 m-4">
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-danger mr-1" (click)="onRecipe()">
+          Recipes
+        </button>
+        <button type="button" class="btn btn-danger" (click)="onShoppingList()">
+          Shopping List
+        </button>
+      </div>
+    </div>
+    <div class="col-12" *ngIf="active">
       <app-recipes></app-recipes>
     </div>
-    <div class="col-12">
+    <div class="col-12" *ngIf="!active">
       <app-shopping-list></app-shopping-list>
     </div>
   </div>
