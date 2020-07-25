@@ -9,26 +9,26 @@ import { Recipe } from '../recipe.model';
 export class RecipeListComponent implements OnInit {
   recipes: Recipe[] = [
     new Recipe(
-      'lorem',
+      'lorem1',
       'ipsum',
       'https://www.inspiredtaste.net/wp-content/uploads/2018/12/Sauteed-Zucchini-Recipe-1-1200.jpg'
     ),
     new Recipe(
-      'lorem',
+      'lorem2',
       'ipsum',
       'https://www.inspiredtaste.net/wp-content/uploads/2018/12/Sauteed-Zucchini-Recipe-1-1200.jpg'
     ),
     new Recipe(
-      'lorem',
+      'lorem3',
       'ipsum',
       'https://www.inspiredtaste.net/wp-content/uploads/2018/12/Sauteed-Zucchini-Recipe-1-1200.jpg'
     ),
   ];
 
-  @Output() Hell = new EventEmitter() as any;
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
 
-  onHell() {
-    this.Hell.emit();
+  recipeSelected(recipe: Recipe) {
+    this.recipeWasSelected.emit(recipe);
   }
 
   constructor() {}

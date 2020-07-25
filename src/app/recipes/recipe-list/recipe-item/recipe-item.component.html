@@ -1,18 +1,17 @@
-    <a
-      href="#"
-      class="list-group-item mt-2 p-4 rounded"
-    >
-      <div class="row">
-        <div class="col-5">
-          <h2 class="list-group-item-heading">{{ recipe.name }}</h2>
-          <p class="list-group-item-text">{{ recipe.description }}</p>
-        </div>
-        <span class="col-7">
-          <img
-            [src]="recipe.imagePath"
-            style="max-height: 100px;"
-            class="img-responsive"
-          />
-        </span>
-      </div>
-    </a>
+<div class="list-group-item mt-2 p-4 rounded"
+      (click)="onSelectRecipe()"
+>
+  <div class="row">
+    <div class="col-5">
+      <h2 class="list-group-item-heading">{{ recipe.name }}</h2>
+      <p class="list-group-item-text">{{ recipe.description }}</p>
+    </div>
+    <span class="col-7">
+      <img
+        [src]="recipe.imagePath"
+        style="max-height: 100px;"
+        class="img-responsive"
+      />
+    </span>
+  </div>
+</div>

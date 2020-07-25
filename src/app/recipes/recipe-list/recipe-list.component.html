@@ -1,8 +1,6 @@
 <div class="row">
   <div class="col-xs-12">
-    <button class="btn btn-success"
-      (click)="onHell()"
-    >New Recipe</button>
+    <button class="btn btn-success">New Recipe</button>
   </div>
 </div>
 <div class="row mt-3">
@@ -10,6 +8,7 @@
     <app-recipe-item
       *ngFor="let recipe of recipes"
       [recipe]="recipe"
+      (selectRecipe)="recipeSelected(recipe)"
     ></app-recipe-item>
   </div>
 </div>
